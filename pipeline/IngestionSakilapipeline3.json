@@ -16,12 +16,10 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "AzureMySqlSource",
-						"query": "SELECT TABLE_SCHEMA, TABLE_NAME FROM information_schema.tables where table_schema = 'sakile'\n\n",
-						"queryTimeout": "02:00:00"
+						"type": "MySqlSource"
 					},
 					"dataset": {
-						"referenceName": "AzureMySqlTableSakila1",
+						"referenceName": "MySqlTableCarlocaLocacao03",
 						"type": "DatasetReference"
 					},
 					"firstRowOnly": false
