@@ -16,7 +16,8 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "MySqlSource"
+						"type": "MySqlSource",
+						"query": "SELECT TABLE_SCHEMA, TABLE_NAME FROM information_schema.tables where table_schema='carloca'\n"
 					},
 					"dataset": {
 						"referenceName": "MySqlTableCarlocaLocacao03",
@@ -59,6 +60,10 @@
 							"typeProperties": {
 								"source": {
 									"type": "AzureMySqlSource",
+									"query": {
+										"value": "@item()",
+										"type": "Expression"
+									},
 									"queryTimeout": "02:00:00"
 								},
 								"sink": {
