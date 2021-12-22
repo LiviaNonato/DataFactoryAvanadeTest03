@@ -7,7 +7,50 @@
 		},
 		"annotations": [],
 		"type": "AzureMySqlTable",
-		"schema": [],
+		"schema": [
+			{
+				"name": "aluguel_id",
+				"type": "int",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "data_de_aluguel",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "inventario_id",
+				"type": "mediumint",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "cliente_id",
+				"type": "smallint",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "data_de_devolucao",
+				"type": "datetime",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "funcionario_id",
+				"type": "tinyint",
+				"precision": 0,
+				"scale": 0
+			},
+			{
+				"name": "ultima_atualizacao",
+				"type": "timestamp",
+				"precision": 0,
+				"scale": 0
+			}
+		],
 		"typeProperties": {
 			"tableName": "aluguel"
 		}

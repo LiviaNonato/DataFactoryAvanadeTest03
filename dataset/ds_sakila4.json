@@ -1,0 +1,12 @@
+{
+	"name": "ds_sakila4",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "db_sakila4",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": []
+	}
+}
