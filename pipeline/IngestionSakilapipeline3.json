@@ -59,12 +59,7 @@
 							"userProperties": [],
 							"typeProperties": {
 								"source": {
-									"type": "AzureMySqlSource",
-									"query": {
-										"value": "@item()",
-										"type": "Expression"
-									},
-									"queryTimeout": "02:00:00"
+									"type": "MySqlSource"
 								},
 								"sink": {
 									"type": "ParquetSink",
@@ -87,10 +82,10 @@
 							},
 							"inputs": [
 								{
-									"referenceName": "AzureMySqlTableSakila2",
+									"referenceName": "MySqlTable1",
 									"type": "DatasetReference",
 									"parameters": {
-										"tableName": {
+										"tablename": {
 											"value": "@item().table_name",
 											"type": "Expression"
 										}
