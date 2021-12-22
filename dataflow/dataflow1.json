@@ -1,0 +1,35 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_cliente",
+						"type": "DatasetReference"
+					},
+					"name": "cliente"
+				},
+				{
+					"dataset": {
+						"referenceName": "ds_aluguel",
+						"type": "DatasetReference"
+					},
+					"name": "aluguel"
+				}
+			],
+			"sinks": [
+				{
+					"name": "sink1"
+				}
+			],
+			"transformations": [
+				{
+					"name": "Join1"
+				}
+			],
+			"script": "source(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 10,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> cliente\nsource(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tlimit: 10,\n\tisolationLevel: 'READ_UNCOMMITTED',\n\tformat: 'table') ~> aluguel\ncliente, aluguel join(ERROR_FUNCTION('') == ERROR_FUNCTION(''),\n\tjoinType:'inner',\n\tbroadcast: 'auto')~> Join1\nJoin1 sink(allowSchemaDrift: true,\n\tvalidateSchema: false,\n\tskipDuplicateMapInputs: true,\n\tskipDuplicateMapOutputs: true) ~> sink1"
+		}
+	}
+}

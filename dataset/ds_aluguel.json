@@ -1,0 +1,15 @@
+{
+	"name": "ds_aluguel",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "db_sakila4",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureMySqlTable",
+		"schema": [],
+		"typeProperties": {
+			"tableName": "aluguel"
+		}
+	}
+}
